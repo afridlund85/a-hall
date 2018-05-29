@@ -1,0 +1,16 @@
+FROM node:10.2
+
+WORKDIR /home/node/app
+
+COPY package*.json ./
+RUN npm i \
+  && mkdir dist \
+  && chown node:node dist
+
+COPY . .
+
+USER node
+
+EXPOSE 8080
+
+CMD ["npm", "run", "dev:client"]
