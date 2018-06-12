@@ -9,7 +9,7 @@ services:
   client_dev:
     build:
       context: .
-      dockerfile: ./docker/client_dev
+      dockerfile: ./Dockerfile-Dev
     volumes:
       - .:/home/node/app
       - node_modules:/home/node/app/node_modules
